@@ -1,9 +1,10 @@
 [user]
 	name = Teddy
 	email = teddy.morel@gmail.com
-	color.status=auto
-	color.branch=auto
-	color.interactive=auto
-	color.diff=auto
-[winUpdater]
-	recentlySeenVersion = 2.24.0.windows.2
+[core]
+	editor = vim
+[color]
+	satus = auto
+	branch = auto
+	interactive = auto
+	diff = auto
