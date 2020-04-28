@@ -1,0 +1,11 @@
+[user]
+	name = Teddy
+	email = teddy.morel@gmail.com
+[winUpdater]
+	recentlySeenVersion = 2.24.0.windows.2
+[color]
+        satus = auto
+        branch = auto
+        interactive = auto
+        diff = auto
+
