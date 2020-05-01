@@ -53,3 +53,12 @@ if has("autocmd")
       \ highlight WhiteSpaceEOL ctermbg=red |
       \ match WhiteSpaceEOL /\(^+.*\)\@<=\s\+$/
 endif " has("autocmd")
+"configurer Vim une bonne fois pour toute afin de proposer les options suivantes :
+
+"- indentation par défaut : 2 espaces
+"- transforme les tabulations en 2 espaces
+"- affiche les caractères de fin de ligne, les tabulations et espaces entre le dernier caractère et la fin de la ligne
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set listchars=eol:¤,trail:-
