@@ -71,7 +71,7 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-PS1="\n"$PS1
+PS1="\n"$PS1"\n"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
