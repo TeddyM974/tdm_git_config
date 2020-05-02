@@ -1,10 +1,17 @@
 - hosts: bulkhead 
+  become: true
   tasks:
-    name: add connection static IP for unicron  
+  - name: install needed network manager libs
+    package:
+      name:
+        - libnm-glib-dev
+      state: present  
+
+  - name: add connection static IP for unicron  
     nmcli:
-    conn_name: netplan-enp3s0
-    ifname: enp3s0
-    type: ethernet
-    ip4: 192.168.2.254/24
-    gw4: 192.168.2.1
-    state: present
+      conn_name: netplan-enp3s0
+      ifname: enp3s0
+      type: ethernet
+      ip4: 192.168.2.254/24
+      gw4: 192.168.2.254
+      state: present
