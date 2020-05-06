@@ -1,0 +1,14 @@
+- hosts: all
+  become: true
+  tasks:
+  - name: install nmap, tmux, htop
+    package:
+      name:
+        - nmap
+        - tmux
+        - htop
+      state: present  
+
+
+
+
