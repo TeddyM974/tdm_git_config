@@ -1,0 +1,22 @@
+- hosts: all
+  become: true
+  tasks:
+  - name: ajout de Teddy 
+    user:
+      name: teddy
+      shell: /bin/bash
+      groups: sudo
+      append: yes
+
+  - name: ajout de Theo
+    user:
+      name: theo
+      shell: /bin/bash
+
+  - name: ajout de Laurence
+    user:
+      name: laurence
+      shell: /bin/bash
+      groups: sudo
+      append: yes
+      state: present
