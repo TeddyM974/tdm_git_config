@@ -1,0 +1,27 @@
+- hosts: bulkhead 
+  become: true
+  tasks:
+  - name: install nmap
+    package:
+      name:
+        - nmap
+      state: present  
+
+- hosts: bumblebee
+  remote_user: teddy
+  become: true
+  tasks:
+   - name: create user-ansible
+     user:
+       name: user-ansible
+       shell: /bin/bash
+       groups: sudo
+       append: yes 
+   
+   - name: install nmap
+     package:
+      name:
+        - nmap
+      state: present  
+
+
