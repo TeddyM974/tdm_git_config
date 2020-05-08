@@ -3,12 +3,13 @@
   tasks:
 
 
-  - name: install nmap, tmux, htop
+  - name: install basic software
     package:
       name:
         - nmap
         - tmux
         - htop
+        - tree
       state: present  
 
 
