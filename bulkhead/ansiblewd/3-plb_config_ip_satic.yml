@@ -15,3 +15,22 @@
       ip4: 192.168.2.254/24
       gw4: 192.168.2.254
       state: present
+
+- hosts: ironhide
+  become: true
+  tasks:
+  - name: install needed network manager libs
+    package:
+      name:
+        - libnm-glib-dev
+      state: present  
+
+  - name: add connection static IP for unicron  
+    nmcli:
+      conn_name: netplan-enp7s0
+      ifname: enp7s0
+      type: ethernet
+      ip4: 192.168.0.3/24
+      gw4: 192.168.0.1
+      dns4: 192.168.0.1
+      state: present
