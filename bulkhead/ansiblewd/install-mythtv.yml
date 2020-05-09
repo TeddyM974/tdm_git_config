@@ -1,4 +1,11 @@
 ---
+- name: "Installation mythtv frontend et backend"
+  hosts: MythtvMaster_machines 
+  become: true
+  roles:
+    - role: "MythTV"
+      mythtv_type_install: full
+
 - name: "Installation mythtv frontend "
   hosts: MythtvFrontend_machines
   become: true
@@ -6,9 +13,3 @@
     - role: "MythTV"
       mythtv_type_install: frontend 
 
-- name: "Installation mythtv frontend et backend"
-  hosts: MythtvMaster_machines 
-  become: true
-  roles:
-    - role: "MythTV"
-      mythtv_type_install: full

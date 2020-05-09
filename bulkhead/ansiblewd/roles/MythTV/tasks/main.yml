@@ -6,17 +6,20 @@
     repo: ppa:mythbuntu/31
 
 
-- name: "isntall MythTV backend et frontend"
+- name: "isntall MythTV full backend et frontend"
   apt:
     name:
       - mythtv
     update_cache: yes
     state: present
-  when ( mythtv_type_install == "full")
+  when: ( mythtv_type_install == "full")
+
+- name: "isntall MythTV frontend"
+  apt:
+    name:
+      - mythtv-frontend 
+    update_cache: yes
+    state: present
+  when: ( mythtv_type_install == "frontend")
 
 
-    #3. Cette tâche fait appel à un autre fichier de configuration pour installer PHP. Elle est exécutée uniquement si la variable php_install est à vraie (par défaut, elle est à faux)
-    #- name: "install php7 packages"
-    #  include: "php7-install.yml"
-    #    when: php_install|default(False)|bool
-- name:   
