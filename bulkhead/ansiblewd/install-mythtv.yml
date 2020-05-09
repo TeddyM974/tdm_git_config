@@ -1,0 +1,6 @@
+---
+- name: "Installation mythtv"
+  hosts: ironhide
+  become: true
+  roles:
+    - role: "MythTV"
