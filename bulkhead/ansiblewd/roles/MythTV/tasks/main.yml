@@ -1,0 +1,22 @@
+---
+# tasks file for MythTV
+# Add mythtv stable repository from PPA and install its signing key.
+- name: ppa pour Mythtv
+  apt_repository:
+    repo: ppa:mythbuntu/31
+
+
+- name: "isntall MythTV backend et frontend"
+  apt:
+    name:
+      - mythtv
+    update_cache: yes
+    state: present
+  when ( mythtv_type_install == "full")
+
+
+    #3. Cette tâche fait appel à un autre fichier de configuration pour installer PHP. Elle est exécutée uniquement si la variable php_install est à vraie (par défaut, elle est à faux)
+    #- name: "install php7 packages"
+    #  include: "php7-install.yml"
+    #    when: php_install|default(False)|bool
+- name:   
