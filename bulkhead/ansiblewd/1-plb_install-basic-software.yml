@@ -6,6 +6,7 @@
   - name: install basic software
     package:
       name:
+        - vim
         - nmap
         - tmux
         - htop
