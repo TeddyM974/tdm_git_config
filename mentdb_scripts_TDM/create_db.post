@@ -1,0 +1,31 @@
+script merge "create_db.post" false 1 
+  (param
+  	(var "[v1]" {true} "le nom de la connexion à une base existante" is_null:true is_empty:true "MENTDB")
+  	(var "[v2]" {true} "le nom de la nouvelle base" is_null:true is_empty:true "TEDHOME")
+  	(var "[vNomNewConnexion]" {true} "le nom de la nouvelle base" is_null:true is_empty:true "TEDHOME")
+  ;) 
+  "description ..." 
+{
+	
+	
+sql connect "session1" {cm get [v1];};
+
+
+-> "[varSQL1]" (concat "CREATE DATABASE IF NOT EXISTS "[v2]);
+
+
+sql dml "session1" ([varSQL1]) ;
+
+sql disconnect "session1";
+
+
+cm set [vNomNewConnexion] {execute "db.mysql.config.get"
+	"[hostname]" "localhost"
+	"[port]" "3306"
+	"[database]" [v2]
+	"[user]" "mentdbuser"
+	"[password]" "pwd_00_1111"
+;};
+
+	
+} "Return ...";
